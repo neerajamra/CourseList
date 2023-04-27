@@ -1,0 +1,35 @@
+<h1>Exam Courses</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.NO.</th>
+        <th scope="col">COURSE</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">DESC.</th>
+        <th scope="col">EDITOR</th>
+        <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of examList">
+      <td>{{ item.id }}</td>
+      <td>{{ item.examCourse }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.discription }}</td>
+      <td>{{ item.discrip }}</td>
+      <td> <i (click)="deleteCourse(item.id)" class='fas fa-trash-alt'></i>
+        &nbsp;
+      <a routerLink="/courseedit/{{ item.id }}"><i class='fas fa-edit'></i></a>
+      
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="addexambtn">
+   
+  <button type="submit" class="btn btn-primary" routerLink="/addNewCourse">
+    Add New Course
+  </button>
+</div>  
